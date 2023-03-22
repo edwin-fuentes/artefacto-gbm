@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+  artefacto:
+    network_mode: host
+    container_name: 'artefacto_container'
+    image: '${REPO_NAME}:${SHORT_SHA}'
+    env_file:
+      - .env
+    build:
+      context: .
+      args:
+        APP_DIR_ARG: '${APP_DIR}'
+        APP_PORT_ARG: '${APP_PORT}'
+        ENV_ARG: '${ENV}'
+    ports:
+      - '${APP_PORT}:${APP_PORT}'

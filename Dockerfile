@@ -11,12 +11,12 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV APP_PORT=$APP_PORT
 ENV ENV=$ENV
 
-RUN mkdir -p $BASE_DIR
+RUN mkdir -p $APP_DIR
 
 RUN apt-get update -qq -y && \
     npm i -g cross-env
 
-WORKDIR $BASE_DIR
+WORKDIR $APP_DIR
 
 COPY . .
 

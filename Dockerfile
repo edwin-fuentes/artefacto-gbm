@@ -24,7 +24,7 @@ RUN apt-get clean autoclean && \
     apt-get autoremove --yes && \
     rm -rf /var/lib/{apt,dpkg,cache,log}/
 
-ENTRYPOINT entrypoint.sh
+CMD npm run start
 
 EXPOSE $APP_PORT
 

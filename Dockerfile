@@ -20,11 +20,14 @@ WORKDIR /home/artefacto
 
 COPY . .
 
+RUN npm install
+RUN npm run build
+
 RUN apt-get clean autoclean && \
     apt-get autoremove --yes && \
     rm -rf /var/lib/{apt,dpkg,cache,log}/
 
-CMD npm run start
+CMD ["npm", "run", "start"]
 
 EXPOSE $APP_PORT
 

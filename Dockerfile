@@ -17,7 +17,7 @@ RUN apt-get update -qq -y && \
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY . .
 
 RUN npm install
 

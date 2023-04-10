@@ -21,7 +21,7 @@ COPY package*.json ./
 
 RUN npm install
 
-COPY build/ .
+COPY build/ public/
 
 RUN ls
 RUN pwd

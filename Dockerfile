@@ -8,7 +8,7 @@ ARG ENV_ARG
 
 ENV BASE_DIR=/home/artefacto
 ENV DEBIAN_FRONTEND=noninteractive
-ENV APP_PORT=300
+ENV APP_PORT=8080
 ENV ENV=production
 
 #RUN mkdir -p $APP_DIR
@@ -16,19 +16,14 @@ ENV ENV=production
 RUN apt-get update -qq -y && \
     npm i -g cross-env
 
-WORKDIR /home/artefacto
+WORKDIR /app
 
-COPY . .
+COPY package*.json ./
 
 RUN npm install
-RUN npm run build
 
-RUN apt-get clean autoclean && \
-    apt-get autoremove --yes && \
-    rm -rf /var/lib/{apt,dpkg,cache,log}/
-
-CMD ["npm", "run", "start"]
+COPY build/ ./
 
 EXPOSE $APP_PORT
 
-
+CMD ["npm", "start"]

@@ -21,9 +21,9 @@ COPY package*.json ./
 
 RUN npm install
 
-COPY build/ app/public
+COPY build/ .
 
-RUN ls /app
+RUN ls app/
 RUN pwd
 EXPOSE $APP_PORT
 

@@ -23,7 +23,7 @@ RUN npm install
 
 COPY build/ .
 
-RUN ls app/
+RUN ls
 RUN pwd
 EXPOSE $APP_PORT
 

@@ -21,10 +21,10 @@ COPY package*.json ./
 
 RUN npm install
 
-COPY build/ ./
+COPY build/ app/public
 
 RUN ls
-
+RUN pwd
 EXPOSE $APP_PORT
 
 CMD ["npm", "start"]

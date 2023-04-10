@@ -6,7 +6,6 @@ ARG APP_DIR_ARG
 ARG APP_PORT_ARG
 ARG ENV_ARG
 
-ENV BASE_DIR=/home/artefacto
 ENV DEBIAN_FRONTEND=noninteractive
 ENV APP_PORT=8080
 ENV ENV=production
@@ -23,6 +22,8 @@ COPY package*.json ./
 RUN npm install
 
 COPY build/ ./
+
+RUN ls
 
 EXPOSE $APP_PORT
 

@@ -9,6 +9,8 @@ ENV ENV=production
 RUN apt-get update -qq -y && \
     npm i -g cross-env
 
+RUN apt-get update prueba 
+
 WORKDIR /app
 
 COPY . .

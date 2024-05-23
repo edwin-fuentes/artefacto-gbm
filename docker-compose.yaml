@@ -10,7 +10,7 @@ services:
       context: .
       args:
         APP_DIR_ARG: '${APP_DIR}'
-        APP_PORT_ARG: '${APP_PORT}'
+        APP_PORT_ARG: '${APP_PORTS}'
         ENV_ARG: '${ENV}'
     ports:
       - '${APP_PORT}:${APP_PORT}'

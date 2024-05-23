@@ -13,4 +13,4 @@ services:
         APP_PORT_ARG: '${APP_PORTS}'
         ENV_ARG: '${ENV}'
     ports:
-      - '${APP_PORT}:${APP_PORT}'
+      - '${APP_PORT}:${APP_PORTS}'
